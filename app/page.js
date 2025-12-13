@@ -33,6 +33,36 @@ const Arrow = ({ label }) => (
   </div>
 );
 
+const UpArrow = ({ label }) => (
+  <div style={{ textAlign: 'center', padding: '12px 0' }}>
+    {label && <div style={{
+      fontSize: '0.85rem',
+      color: '#666',
+      fontStyle: 'italic',
+      marginBottom: '8px'
+    }}>{label}</div>}
+    <div style={{
+      width: '3px',
+      height: '40px',
+      background: '#9E9E9E',
+      margin: '0 auto',
+      position: 'relative'
+    }}>
+      <div style={{
+        position: 'absolute',
+        top: '-8px',
+        left: '50%',
+        transform: 'translateX(-50%)',
+        width: '0',
+        height: '0',
+        borderLeft: '8px solid transparent',
+        borderRight: '8px solid transparent',
+        borderBottom: '12px solid #9E9E9E'
+      }} />
+    </div>
+  </div>
+);
+
 const SplitArrow = ({ leftLabel, rightLabel }) => (
   <div style={{ display: 'flex', justifyContent: 'center', gap: '200px', padding: '12px 0', flexWrap: 'wrap' }}>
     {[leftLabel, rightLabel].map((label, idx) => (
@@ -152,7 +182,7 @@ const SystemArchitecture = () => (
       />
     </div>
     
-    <Arrow label="Data Feed" />
+    <UpArrow label="Data Feed" />
     
     <Component 
       className="pipeline"
